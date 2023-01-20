@@ -16,9 +16,17 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@pages": ["pages/"],
+      "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"],
+      "@containers/*": ["containers/*"],
+      "@icons/*": ["assets/icons/*"],
+      "@logos/*": ["assets/logos/*"],
+      "@context/*": ["context/*"],
+      "@styles/*": ["styles/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@hooks/*": ["hooks/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/_app.tsx", "src/pages/index.tsx"],
   "exclude": ["node_modules"]
 }
