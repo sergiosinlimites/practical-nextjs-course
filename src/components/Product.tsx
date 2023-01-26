@@ -1,30 +1,31 @@
 import React, { useContext, useEffect } from 'react';
 import AppContext from '@context/AppContext';
 import addToCartImage from '@icons/bt_add_to_cart.svg';
-import '@styles/Product.scss';
-import { Product as Prod, Product } from 'interfaces/Product';
+import Image from 'next/image';
+import { ProductInterface } from 'interfaces/Product';
+import styles from '@styles/Product.module.scss';
 
-const ProductComponent = ({ product }: { product: Prod }) => {
+const Product = ({ product }: { product: ProductInterface }) => {
   const { addToCart } = useContext<any>(AppContext);
 
   useEffect(() => {
     // console.log('el producto modificado', product);
   }, [product]);
 
-  const handleClick = (item: Prod) => {
+  const handleClick = (item: ProductInterface) => {
     addToCart(item);
   };
 
   return (
-    <div className="Product">
-      <img src={product.images[0]} alt={product.title} />
-      <div className="Product-info">
+    <div className={styles.Product}>
+      <Image src={product.images[0]} width={300} height={240} alt={product.title} />
+      <div className={styles['Product-info']}>
         <div>
           <p>${product.price}</p>
           <p>{product.title}</p>
         </div>
-        <figure onClick={() => handleClick(product)} onKeyDown={handleClick(product)}>
-          <img src={addToCartImage} alt="add to cart" />
+        <figure onClick={() => handleClick(product)} onKeyDown={() => handleClick(product)}>
+          <Image src={addToCartImage} width={20} height={30} alt="add to cart" />
         </figure>
       </div>
     </div>

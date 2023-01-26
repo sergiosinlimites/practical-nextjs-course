@@ -14,6 +14,9 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    domains: ['api.lorem.space', 'placeimg.com'],
+  },
 };
 
 module.exports = nextConfig;
