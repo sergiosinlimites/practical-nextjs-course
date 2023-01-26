@@ -1,6 +1,7 @@
 import AppContext from '@context/AppContext';
 import close from '@icons/icon_close.png';
 import { Product } from '@interfaces/Product';
+import Image from 'next/image';
 import { useContext } from 'react';
 import styles from '@styles/OrderProduct.module.scss';
 
@@ -18,9 +19,9 @@ const OrderProduct = ({ product }: { product: Product }) => {
       </figure>
       <p>{product.title}</p>
       <p>${product.price}</p>
-      <img className="close" src={close} alt="close" onClick={() => handleRemoveProduct(product.id)} />
+      <Image width={20} height={20} className="close" src={close} alt="close" onClick={() => handleRemoveProduct(product.id)} />
     </div>
   );
-}
+};
 
 export default OrderProduct;

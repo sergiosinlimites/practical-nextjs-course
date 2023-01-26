@@ -24,8 +24,8 @@ const Product = ({ product }: { product: ProductInterface }) => {
           <p>${product.price}</p>
           <p>{product.title}</p>
         </div>
-        <figure onClick={() => handleClick(product)} onKeyDown={() => handleClick(product)}>
-          <Image src={addToCartImage} width={20} height={30} alt="add to cart" />
+        <figure onClick={() => handleClick(product)}>
+          <Image className={styles['product-image']} src={addToCartImage} width={20} height={30} alt="add to cart" />
         </figure>
       </div>
     </div>

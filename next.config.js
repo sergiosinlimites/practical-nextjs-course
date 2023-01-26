@@ -15,7 +15,7 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ['api.lorem.space', 'placeimg.com'],
+    domains: ['api.lorem.space', 'placeimg.com', 'images.pexels.com'],
   },
 };
 

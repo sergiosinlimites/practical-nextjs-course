@@ -14,7 +14,7 @@ const Header = () => {
   const [toggleOrder, setToggleOrder] = useState(false);
   const {
     state: { cart },
-  } = useContext(AppContext);
+  } = useContext<any>(AppContext);
   const handleToggle = () => {
     setToggle(!toggle);
   };
@@ -27,9 +27,11 @@ const Header = () => {
   return (
     <>
       <nav className={styles.Header}>
-        <Image src={menu} alt="menu" className={styles.menu} />
+        <Image width={20} height={20} src={menu} alt="menu" className={styles.menu} />
         <div className={styles['navbar-left']}>
-          <Image src={logo} alt="logo" className={styles.logo} />
+          <Link href="/">
+            <Image width={20} height={20} src={logo} alt="logo" className={styles.logo} />
+          </Link>
           <ul>
             <li>
               <Link href="/">All</Link>

@@ -9,6 +9,12 @@
   border-radius: 20px;
   object-fit: cover;
 }
+
+.Product .product-image {
+  width: 30px;
+  height: 30px;
+}
+
 .Product-info {
   display: flex;
   justify-content: space-between;
@@ -41,9 +47,5 @@
   }
   .Product {
     width: 140px;
-  }
-  .Product Image {
-    width: 140px;
-    height: 140px;
   }
 }

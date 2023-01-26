@@ -1,19 +1,21 @@
 import { useContext, useEffect, useState } from 'react';
 import AppContext from '@context/AppContext';
 import OrderProduct from '../components/OrderProduct';
-import { Product } from '@interfaces/Product';
+import { ProductInterface } from '@interfaces/Product';
 import flecha from '@icons/flechita.svg';
+import Link from 'next/link';
+import Image from 'next/image';
 import styles from '@styles/OrderDetail.module.scss';
 
 const OrderDetail = () => {
-  const [accumulatedProducts, setAccumulatedProducts] = useState<Product[]>([]);
+  const [accumulatedProducts, setAccumulatedProducts] = useState<ProductInterface[]>([]);
   const [total, setTotal] = useState<number>(0);
   const {
     state: { cart },
-  } = useContext(AppContext);
+  } = useContext<any>(AppContext);
 
-  const accumulateProducts = (products: Product[]) => {
-    const arrangedProducts: Product[] = [];
+  const accumulateProducts = (products: ProductInterface[]) => {
+    const arrangedProducts: ProductInterface[] = [];
     for (let product of products) {
       const freezedObject = Object.assign({}, product);
       const found = arrangedProducts.find((p) => p.id === freezedObject.id);
@@ -44,21 +46,23 @@ const OrderDetail = () => {
 
   return (
     <aside className={styles.OrderDetail}>
-      <div className="title-container">
-        <img src={flecha} alt="arrow" />
-        <p className="title">My order</p>
+      <div className={styles['title-container']}>
+        <Image width={20} height={20} src={flecha} alt="arrow" />
+        <p className={styles.title}>My order</p>
       </div>
-      <div className="my-order-content">
+      <div className={styles['my-order-content']}>
         {accumulatedProducts.map((product, index) => (
           <OrderProduct product={product} key={`${index}-orderItem-${product.id}`} />
         ))}
-        <div className="order">
+        <div className={styles.order}>
           <p>
             <span>Total</span>
           </p>
           <p>${total}</p>
         </div>
-        <button className="primary-button">Checkout</button>
+        <Link className={styles['primary-button']} href="/checkout">
+          Checkout
+        </Link>
       </div>
     </aside>
   );
