@@ -1,5 +1,5 @@
-import CategoriesList from "@containers/CategoriesList";
-import Menu from "@components/Menu";
+import CategoriesList from '@containers/CategoriesList';
+import Menu from '@components/Menu';
 import '@styles/Categories.scss';
 
 const Categories = () => {
@@ -9,6 +9,6 @@ const Categories = () => {
       <Menu />
     </div>
   );
-}
+};
 
 export default Categories;

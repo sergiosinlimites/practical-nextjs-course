@@ -18,13 +18,14 @@ const Product = ({ product }: { product: ProductInterface }) => {
 
   return (
     <div className={styles.Product}>
-      <Image src={product.images[0]} width={300} height={240} alt={product.title} />
+      {/* <Image src={product.images[0]} width={300} height={240} alt={product.title} /> */}
       <div className={styles['Product-info']}>
         <div>
           <p>${product.price}</p>
           <p>{product.title}</p>
         </div>
-        <figure onClick={() => handleClick(product)}>
+        {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
+        <figure onMouseDown={() => handleClick(product)}>
           <Image className={styles['product-image']} src={addToCartImage} width={20} height={30} alt="add to cart" />
         </figure>
       </div>

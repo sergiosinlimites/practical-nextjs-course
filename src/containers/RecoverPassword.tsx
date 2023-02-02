@@ -1,29 +1,31 @@
 import logo from '@logos/logo_yard_sale.svg';
 import email from '@icons/email.svg';
-import '@styles/RecoverPassword.scss';
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from '@styles/RecoverPassword.module.scss';
 
 const RecoverPassword = () => {
   return (
-    <div class="RecoverPassword">
-    <div class="form-container">
-      <img src={logo} alt="logo" class="logo" />
+    <div className={styles.RecoverPassword}>
+      <div className={styles['form-container']}>
+        <Image width={200} height={200} src={logo} alt="logo" className={styles.logo} />
 
-      <h1 class="title">Email has been sent!</h1>
-      <p class="subtitle">Please check your inbox for instructions on how to reset the password</p>
+        <h1 className={styles.title}>Email has been sent!</h1>
+        <p className={styles.subtitle}>Please check your inbox for instructions on how to reset the password</p>
 
-      <div class="email-image">
-        <img src={email} alt="email" />
+        <div className={styles['email-image']}>
+          <Image width={200} height={200} src={email} alt="email" />
+        </div>
+
+        <button className="primary-button RecoverPassword-button">Login</button>
+
+        <p className="resend">
+          <span>Didn&apos;t receive the email?</span>
+          <Link href="/">Resend</Link>
+        </p>
       </div>
-
-      <button class="primary-button RecoverPassword-button">Login</button>
-
-      <p class="resend">
-        <span>Didn't receive the email?</span>
-        <a href="/">Resend</a>
-      </p>
     </div>
-  </div>
   );
-}
+};
 
 export default RecoverPassword;

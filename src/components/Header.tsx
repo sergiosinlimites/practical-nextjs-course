@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState, useContext } from 'react';
 import AppContext from '@context/AppContext';
 import Menu from '@components/Menu';
@@ -55,10 +56,10 @@ const Header = () => {
         </div>
         <div className={styles['navbar-right']}>
           <ul>
-            <li className={styles['navbar-email']} onClick={handleToggle}>
+            <li className={styles['navbar-email']} onMouseDown={handleToggle}>
               platzi@example.com
             </li>
-            <li className={styles['navbar-shopping-cart']} onClick={handleToggleOrder}>
+            <li className={styles['navbar-shopping-cart']} onMouseDown={handleToggleOrder}>
               <Image src={cartImage} alt="shopping cart" />
               {cart.length > 0 && <div>{verifyCartNumber(cart.length)}</div>}
             </li>

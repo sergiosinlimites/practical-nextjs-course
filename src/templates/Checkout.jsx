@@ -1,4 +1,4 @@
-import CheckoutContainer from "@containers/CheckoutContainer";
+import CheckoutContainer from '@containers/CheckoutContainer';
 
 const Checkout = () => {
   return (
@@ -6,6 +6,6 @@ const Checkout = () => {
       <CheckoutContainer />|
     </div>
   );
-}
+};
 
 export default Checkout;

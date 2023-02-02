@@ -1,12 +1,12 @@
 import AppContext from '@context/AppContext';
 import close from '@icons/icon_close.png';
-import { Product } from '@interfaces/Product';
+import { ProductInterface } from '@interfaces/Product';
 import Image from 'next/image';
 import { useContext } from 'react';
 import styles from '@styles/OrderProduct.module.scss';
 
-const OrderProduct = ({ product }: { product: Product }) => {
-  const { removeFromCart } = useContext(AppContext);
+const OrderProduct = ({ product }: { product: ProductInterface }) => {
+  const { removeFromCart } = useContext<any>(AppContext);
 
   const handleRemoveProduct = (id: number) => {
     removeFromCart(id);
@@ -15,7 +15,7 @@ const OrderProduct = ({ product }: { product: Product }) => {
   return (
     <div className={styles.OrderProduct}>
       <figure>
-        <img src={product.images[0]} alt={product.title} />
+        <Image width={200} height={200} src={product.images[0]} alt={product.title} />
       </figure>
       <p>{product.title}</p>
       <p>${product.price}</p>

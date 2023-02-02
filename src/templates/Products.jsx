@@ -6,6 +6,6 @@ const Products = () => {
       <ProductsList />
     </section>
   );
-}
+};
 
 export default Products;

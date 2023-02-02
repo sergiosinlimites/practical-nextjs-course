@@ -1,4 +1,4 @@
-import OldOrders from "@containers/OldOrders";
+import OldOrders from '@containers/OldOrders';
 import Order from '@components/Order';
 import '@styles/CheckoutContainer.scss';
 
@@ -13,6 +13,6 @@ const Orders = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Orders;

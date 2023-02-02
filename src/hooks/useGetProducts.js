@@ -7,12 +7,12 @@ const useGetProducts = (API) => {
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios(`${API}/products`);
-      setProducts(response.data); 
-    }
+      setProducts(response.data);
+    };
     getProducts();
-  }, []);
+  }, [API]);
 
   return products;
-}
+};
 
 export default useGetProducts;
