@@ -1,5 +1,12 @@
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  mode: 'production',
+  disable: false
+});
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withPWA({
   reactStrictMode: true,
   env: {
     customKey: 'customValue',
@@ -17,6 +24,6 @@ const nextConfig = {
   images: {
     domains: ['api.lorem.space', 'placeimg.com', 'images.pexels.com'],
   },
-};
+});
 
 module.exports = nextConfig;
